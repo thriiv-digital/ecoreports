@@ -16,7 +16,7 @@ function ArticleCard({
   title,
   size = 'md'
 }) {
-  const h = size === 'lg' ? 320 : 220;
+  const h = size === 'lg' ? 480 : 380;
   return /*#__PURE__*/React.createElement("a", {
     href: "#",
     style: {
@@ -44,24 +44,24 @@ function ArticleCard({
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
-      left: 'var(--space-5)',
-      right: 'var(--space-5)',
-      bottom: 'var(--space-5)',
+      left: 'var(--space-6)',
+      right: 'var(--space-6)',
+      bottom: 'var(--space-6)',
       color: '#fff'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--font-body)',
-      fontSize: 'var(--text-xs)',
+      fontSize: 'var(--text-sm)',
       fontWeight: 600,
       opacity: 0.85,
-      marginBottom: 6
+      marginBottom: 8
     }
   }, date), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--font-display)',
-      fontSize: size === 'lg' ? 'var(--text-xl)' : 'var(--text-md)',
-      lineHeight: 1.15
+      fontSize: size === 'lg' ? 'var(--text-3xl)' : 'var(--text-xl)',
+      lineHeight: 1.12
     }
   }, title)));
 }
@@ -147,6 +147,7 @@ function TestimonialCard({
     google: 'G',
     facebook: 'f'
   }[source];
+  const starColor = source === 'google' ? '#FBBC04' : '#1877F2';
   return /*#__PURE__*/React.createElement("div", {
     style: {
       background: '#fff',
@@ -159,7 +160,7 @@ function TestimonialCard({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      color: 'var(--green-600)',
+      color: starColor,
       letterSpacing: '2px'
     }
   }, "\u2605\u2605\u2605\u2605\u2605"), /*#__PURE__*/React.createElement("p", {
@@ -513,7 +514,7 @@ function GoogleRatingBadge({
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
-      color: 'var(--green-600)',
+      color: '#FBBC04',
       fontSize: 'var(--text-sm)',
       letterSpacing: 1
     }
@@ -548,26 +549,26 @@ function ProcessStep({
       flexDirection: 'column',
       gap: 'var(--space-3)',
       paddingTop: 'var(--space-5)',
-      borderTop: '3px solid var(--green-500)'
+      borderTop: '3px solid var(--green-400)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--font-display)',
       fontSize: 'var(--text-2xl)',
-      color: 'var(--green-600)'
+      color: 'var(--green-400)'
     }
   }, number), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--font-body)',
       fontWeight: 700,
       fontSize: 'var(--text-md)',
-      color: 'var(--ink-900)'
+      color: '#fff'
     }
   }, title), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--font-body)',
       fontSize: 'var(--text-sm)',
-      color: 'var(--ink-700)',
+      color: 'rgba(255,255,255,0.75)',
       lineHeight: 'var(--leading-relaxed)'
     }
   }, description));
@@ -585,8 +586,8 @@ function SocialDot({
       width: 30,
       height: 30,
       borderRadius: '50%',
-      background: 'var(--sage-200)',
-      color: 'var(--forest-700)',
+      background: 'rgba(255,255,255,0.12)',
+      color: '#fff',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -608,11 +609,11 @@ function Footer({
     fontFamily: 'var(--font-body)',
     fontWeight: 700,
     fontSize: 'var(--text-sm)',
-    color: 'var(--forest-700)',
+    color: 'var(--green-400)',
     marginBottom: 'var(--space-2)'
   };
   const link = {
-    color: 'var(--ink-700)',
+    color: 'rgba(255,255,255,0.82)',
     fontFamily: 'var(--font-body)',
     fontSize: 'var(--text-sm)'
   };
@@ -622,10 +623,10 @@ function Footer({
   };
   return /*#__PURE__*/React.createElement("footer", {
     style: {
-      background: 'var(--sage-100)',
-      color: 'var(--ink-900)',
+      background: 'var(--forest-800)',
+      color: '#fff',
       padding: 'var(--space-16) var(--space-8) var(--space-8)',
-      borderTop: '1px solid var(--sage-200)'
+      borderTop: '1px solid rgba(255,255,255,0.1)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -639,8 +640,8 @@ function Footer({
     style: {
       fontFamily: 'var(--font-display)',
       fontSize: 'var(--text-md)',
-      color: 'var(--forest-700)',
-      border: '2px solid var(--forest-700)',
+      color: '#fff',
+      border: '2px solid var(--green-400)',
       borderRadius: 'var(--radius-sm)',
       display: 'inline-block',
       padding: '5px 12px',
@@ -723,12 +724,28 @@ function Footer({
       maxWidth: 'var(--container-max)',
       margin: 'var(--space-12) auto 0',
       paddingTop: 'var(--space-6)',
-      borderTop: '1px solid var(--sage-200)',
-      fontSize: 'var(--text-xs)',
-      color: 'var(--ink-500)',
+      borderTop: '1px solid rgba(255,255,255,0.12)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 'var(--space-2)',
       textAlign: 'center'
     }
-  }, "\xA9 2018\u20132026 Eco Reports | BASIX Certificates and NatHERS Assessments Australia-wide"));
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 'var(--text-xs)',
+      color: 'rgba(255,255,255,0.6)'
+    }
+  }, "\xA9 2018\u20132026 Eco Reports | BASIX Certificates and NatHERS Assessments Australia-wide"), /*#__PURE__*/React.createElement("a", {
+    href: "https://wollongongwebdesignco.com.au",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    style: {
+      fontSize: 'var(--text-xs)',
+      color: 'rgba(255,255,255,0.45)',
+      textDecoration: 'none'
+    }
+  }, "Website by Web Design Wollongong Co")));
 }
 Object.assign(__ds_scope, { Footer });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/Footer.jsx", error: String((e && e.message) || e) }); }
@@ -757,7 +774,7 @@ function NavHeader({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      height: 84,
+      height: 92,
       gap: 'var(--space-6)',
       flexWrap: 'wrap'
     }
@@ -774,7 +791,7 @@ function NavHeader({
   }, "Eco Reports"), /*#__PURE__*/React.createElement("nav", {
     style: {
       display: 'flex',
-      gap: 'var(--space-6)',
+      gap: 'var(--space-8)',
       flexWrap: 'wrap'
     }
   }, links.map(l => /*#__PURE__*/React.createElement("a", {
@@ -786,35 +803,35 @@ function NavHeader({
     },
     style: {
       fontFamily: 'var(--font-body)',
-      fontWeight: 600,
-      fontSize: 'var(--text-sm)',
-      color: l === active ? 'var(--green-600)' : 'var(--ink-700)'
+      fontWeight: 700,
+      fontSize: 'var(--text-md)',
+      color: l === active ? 'var(--green-600)' : 'var(--ink-900)'
     }
   }, l))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
-      gap: 'var(--space-5)',
+      gap: 'var(--space-6)',
       flexShrink: 0
     }
   }, phone && /*#__PURE__*/React.createElement("a", {
     href: `tel:${phone.replace(/[^0-9+]/g, '')}`,
     style: {
-      fontFamily: 'var(--font-mono)',
-      color: 'var(--ink-900)',
-      fontSize: 'var(--text-sm)',
-      fontWeight: 600
+      fontFamily: 'var(--font-body)',
+      color: 'var(--forest-700)',
+      fontSize: 'var(--text-md)',
+      fontWeight: 700
     }
   }, phone), /*#__PURE__*/React.createElement("button", {
     style: {
       fontFamily: 'var(--font-body)',
       fontWeight: 700,
-      fontSize: 'var(--text-sm)',
+      fontSize: 'var(--text-base)',
       background: 'var(--color-accent)',
       color: '#fff',
       border: 'none',
-      borderRadius: 'var(--radius-sm)',
-      padding: '12px 22px',
+      borderRadius: 'var(--radius-md)',
+      padding: '14px 26px',
       cursor: 'pointer'
     }
   }, "Get a Quote"))));
