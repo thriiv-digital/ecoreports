@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Eco Reports Homepage" description="Full-depth BASIX/NatHERS homepage: full-bleed hero with review score, services, why-it's-required explainer, process, credentials, testimonials, audiences, resources" -->
+<helmet><script src="./ds-base.js"></script></helmet>
+<div style="font-family:var(--font-body)">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.NavHeader" links="{{ navLinks }}" active="Home" phone="(02) 7910 9379" on-nav-click="{{ go }}" hint-size="100%,84px"></x-import>
+
+<div style="position:relative;height:88vh;min-height:640px">
+<img src="assets/imagery/hero-vertical-forest.jpg" alt="Green residential building with planted balconies" style="width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(22,33,27,0.72) 0%, rgba(22,33,27,0.42) 48%, rgba(22,33,27,0.08) 100%)"></div>
+<div style="position:absolute;inset:0;display:flex;align-items:center">
+<div style="max-width:1200px;margin:0 auto;width:100%;padding:0 32px">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Badge" tone="green" hint-size="260px,28px">Required for most NSW development applications</x-import>
+<h1 style="color:#fff;font-size:3.5rem;max-width:680px;margin:16px 0;line-height:1.08">BASIX &amp; NatHERS certificates, explained and delivered</h1>
+<p style="font-family:var(--font-body);color:#eaf3ee;font-size:1.125rem;max-width:560px;line-height:1.65">If you're building, renovating or extending a home in NSW, your Development Application likely needs a BASIX Certificate and a NatHERS energy rating. We prepare both — fast, accurate, and accepted by council every time.</p>
+<div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;align-items:center">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Button" variant="primary" size="lg" hint-size="160px,52px">Get a quote</x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Button" variant="outline-light" size="lg" on-click="{{ goWhy }}" hint-size="200px,52px">Do I need this?</x-import>
+</div>
+<div style="margin-top:32px">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.GoogleRatingBadge" rating="{{ googleRating }}" count="{{ googleCount }}" hint-size="220px,66px"></x-import>
+</div>
+</div>
+</div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:80px 32px">
+<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">How we can assist</div>
+<h2 style="font-size:2.25rem;color:var(--ink-900);margin-bottom:16px">Three certifications, one team</h2>
+<p style="font-family:var(--font-body);color:var(--ink-700);font-size:1.0625rem;max-width:640px;margin-bottom:40px;line-height:1.65">Every service below is prepared in-house by our accredited assessors and lodged in the format your certifier or council expects.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ServiceCard" image="assets/imagery/basix-certificate-desktop.jpg" title="BASIX Certificates" description="A NSW Government sustainability check for new homes, renovations and extensions. Required with almost every residential Development Application in NSW." cta="What's included" hint-size="100%,380px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ServiceCard" image="assets/imagery/living-room-skylight.jpg" title="NatHERS Assessments" description="A 0–10 star energy efficiency rating for a home's design. Needed for new dwellings and major renovations, and often bundled with your BASIX certificate." cta="What's included" hint-size="100%,380px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ServiceCard" image="assets/imagery/apartment-building-day.jpg" title="Section J & energy reports" description="Energy efficiency compliance for Class 2–9 buildings (apartments, commercial, mixed-use) under the National Construction Code." cta="What's included" hint-size="100%,380px"></x-import>
+</div>
+</div>
+
+<div id="why-section" style="background:var(--sage-50)">
+<div style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
+<div>
+<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">Why it's required</div>
+<h2 style="font-size:2.25rem;color:var(--ink-900);margin-bottom:20px">Not sure if you need one? Here's the simple version.</h2>
+<p style="font-family:var(--font-body);color:var(--ink-700);font-size:1.0625rem;line-height:1.7;margin-bottom:16px">BASIX and NatHERS aren't optional add-ons — they're checks the NSW Government requires before council or a private certifier will approve most residential building work. Without them, your Development Application can't be lodged.</p>
+<p style="font-family:var(--font-body);color:var(--ink-700);font-size:1.0625rem;line-height:1.7;margin-bottom:24px">You'll generally need a BASIX Certificate and/or NatHERS rating if you're building a new home, adding a second dwelling, doing a major renovation or extension, or converting a building's use. If you're not sure, tell us what you're planning and we'll confirm what applies — free of charge.</p>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="font-family:var(--font-display);color:var(--green-600);font-size:1.25rem;line-height:1">✓</span><span style="font-family:var(--font-body);color:var(--ink-900);font-size:1rem"><strong>New builds &amp; knockdown rebuilds</strong> — always required</span></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="font-family:var(--font-display);color:var(--green-600);font-size:1.25rem;line-height:1">✓</span><span style="font-family:var(--font-body);color:var(--ink-900);font-size:1rem"><strong>Renovations &amp; extensions</strong> — required above the cost/area threshold set by council</span></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="font-family:var(--font-display);color:var(--green-600);font-size:1.25rem;line-height:1">✓</span><span style="font-family:var(--font-body);color:var(--ink-900);font-size:1rem"><strong>Granny flats &amp; secondary dwellings</strong> — usually required</span></div>
+</div>
+</div>
+<img src="assets/imagery/sketch-to-render-house.jpg" alt="Architectural plan resolving into a finished home" style="width:100%;height:440px;object-fit:cover;border-radius:var(--radius-md)">
+</div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:80px 32px">
+<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">Process</div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:24px;flex-wrap:wrap">
+<h2 style="font-size:2.25rem;color:var(--ink-900)">How it works</h2>
+<div style="font-family:var(--font-mono);font-size:0.875rem;color:var(--forest-700);background:var(--sage-100);padding:10px 16px;border-radius:var(--radius-sm)">Typical turnaround: 2–3 business days</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ProcessStep" number="01" title="Send your plans" description="Email your architectural plans, site details and specification (if any)." hint-size="100%,180px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ProcessStep" number="02" title="We model it" description="Our assessors run the BASIX and/or NatHERS model against your design." hint-size="100%,180px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ProcessStep" number="03" title="Review together" description="If a commitment needs adjusting to pass, we tell you the options before issuing." hint-size="100%,180px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ProcessStep" number="04" title="Certificate issued" description="Your certificate is issued ready to lodge with your DA or CDC." hint-size="100%,180px"></x-import>
+</div>
+</div>
+
+<div style="text-align:center;padding:0 32px 32px">
+<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600)">We are certified with and for</div>
+</div>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.CredentialStrip" logos="{{ credentialLogos }}" hint-size="100%,230px"></x-import>
+
+<div style="max-width:1200px;margin:0 auto;padding:80px 32px">
+<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">How our clients feel</div>
+<h2 style="font-size:2.25rem;color:var(--ink-900);margin-bottom:32px">Trusted by the industry</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="We used the team at Eco Reports for our last assessment and it was done quickly and we had no problems at all. Definitely check these guys out." name="Amy" source="facebook" hint-size="100%,180px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="We use the team at Eco Reports for our company's BASIX and NatHERS certification needs. It's a simple process to submit a new job and they get it completed quickly with no hassles." name="Tom Springsteen" source="google" hint-size="100%,180px"></x-import>
+</div>
+</div>
+
+<div style="background:var(--sage-50)">
+<div style="max-width:1200px;margin:0 auto;padding:80px 32px">
+<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">Who we work with</div>
+<h2 style="font-size:2.25rem;color:var(--ink-900);margin-bottom:32px">Repeat clients and one-off home owners alike</h2>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.AudienceCard" title="Architects" description="Reliable turnaround across every DA you lodge, with commitments modelled to fit your design intent." hint-size="100%,140px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.AudienceCard" title="Draftsmen & designers" description="Certificates that match your drawings exactly, delivered on the timelines your clients expect." hint-size="100%,140px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.AudienceCard" title="Developers" description="Volume-ready service for multi-dwelling and multi-unit projects, with a single point of contact." hint-size="100%,140px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.AudienceCard" title="Home owners" description="Never done this before? We'll explain exactly what you need in plain English, no jargon." hint-size="100%,140px"></x-import>
+</div>
+</div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:80px 32px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;gap:24px;flex-wrap:wrap">
+<div>
+<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">Resources</div>
+<h2 style="font-size:2.25rem;color:var(--ink-900)">Our latest articles</h2>
+</div>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Button" variant="outline" on-click="{{ goResources }}" hint-size="150px,44px">View all</x-import>
+</div>
+<div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ArticleCard" image="assets/imagery/tree-canopy-green.jpg" date="September 27, 2021" title="12 sustainable design factors for an eco-friendly home" size="lg" hint-size="100%,320px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ArticleCard" image="assets/imagery/basix-certificate-desktop.jpg" date="August 3, 2021" title="What your BASIX certificate actually covers" hint-size="100%,220px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.ArticleCard" image="assets/imagery/living-room-skylight.jpg" date="June 14, 2021" title="Reading a NatHERS star rating" hint-size="100%,220px"></x-import>
+</div>
+</div>
+
+<div style="background:var(--sage-100);padding:72px 32px;text-align:center">
+<div style="max-width:720px;margin:0 auto">
+<h2 style="color:var(--forest-800);font-size:2.25rem;margin-bottom:16px">Ready to get your certificate underway?</h2>
+<p style="font-family:var(--font-body);color:var(--ink-700);font-size:1.0625rem;margin-bottom:32px;line-height:1.65">Send us your plans today and we'll come back with a fixed-price quote and turnaround estimate — usually within the hour.</p>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Button" variant="primary" size="lg" hint-size="160px,52px">Get a quote</x-import>
+</div>
+</div>
+
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Footer" on-nav-click="{{ go }}" hint-size="100%,440px"></x-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      go: () => {},
+      goWhy: () => { const el = document.getElementById('why-section'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' }); },
+      goResources: () => {},
+      navLinks: ['Home', 'Services', 'Process', 'Resources', 'About', 'Contact'],
+      googleRating: 4.9,
+      googleCount: 128,
+      credentialLogos: ['assets/logos/partner-absa.jpg', 'assets/logos/partner-basix.jpg', 'assets/logos/partner-nathers.jpg', 'assets/logos/partner-apha.jpg'],
+    };
+  }
+}
+
+</script>
+</body>
+</html>
