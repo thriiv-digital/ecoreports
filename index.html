@@ -148,20 +148,29 @@ class Component extends DCLogic {
     const heroSection = document.getElementById('hero-section');
     const stickyNav = document.getElementById('sticky-nav');
 
-    const onScroll = () => {
-      if (heroImg && heroSection) {
-        const rect = heroSection.getBoundingClientRect();
-        if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
-          heroImg.style.transform = `translateY(${-rect.top * 0.22}px)`;
-        }
+    // Mouse-wheel scrolling fires many rapid, small 'scroll' events (unlike a
+    // scrollbar drag, which the browser already paces smoothly) — writing to
+    // style on every one of them causes jank. Batch to one update per frame.
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      if (!heroSection) return;
+      const rect = heroSection.getBoundingClientRect();
+      if (heroImg && rect.bottom >= 0 && rect.top <= window.innerHeight) {
+        heroImg.style.transform = `translateY(${-rect.top * 0.22}px)`;
       }
-      if (stickyNav && heroSection) {
-        const heroBottom = heroSection.getBoundingClientRect().bottom;
-        stickyNav.style.transform = heroBottom <= 0 ? 'translateY(0)' : 'translateY(-100%)';
+      if (stickyNav) {
+        stickyNav.style.transform = rect.bottom <= 0 ? 'translateY(0)' : 'translateY(-100%)';
+      }
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
       }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    update();
     window.__ecoScrollCleanup = () => { window.removeEventListener('scroll', onScroll); window.__ecoScrollCleanup = null; };
 
     const track = document.getElementById('testimonial-track');
