@@ -10,3 +10,5 @@ a:hover{color:var(--color-accent)}
 .eyebrow.on-dark{color:var(--lime-500)}
 .cta-btn{transition:background var(--duration-base) var(--ease-standard)}
 .cta-btn:hover{background:var(--forest-700)}
+.hide-scrollbar{scrollbar-width:none;-ms-overflow-style:none}
+.hide-scrollbar::-webkit-scrollbar{display:none}

@@ -322,13 +322,17 @@ function Button({
       color: '#fff',
       borderColor: 'rgba(255,255,255,0.7)'
     },
+    dark: {
+      background: 'var(--forest-800)',
+      color: '#fff'
+    },
     ghost: {
       background: 'transparent',
       color: 'var(--color-primary)'
     }
   };
   return /*#__PURE__*/React.createElement("button", _extends({
-    className: variant === 'primary' ? 'cta-btn' : undefined,
+    className: (variant === 'primary' || variant === 'dark') ? 'cta-btn' : undefined,
     style: {
       ...base,
       ...sizes[size],
@@ -480,11 +484,13 @@ function CredentialStrip({
       alignItems: 'center',
       justifyContent: 'center',
       padding: 'var(--space-6)',
-      border: '1px solid var(--color-border)'
+      border: '1px solid var(--color-border)',
+      overflow: 'hidden'
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: src,
     alt: "",
+    className: "img-zoom",
     style: {
       maxWidth: '100%',
       maxHeight: '100%'

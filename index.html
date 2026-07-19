@@ -12,7 +12,12 @@
 <div style="font-family:var(--font-body)">
 <x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.NavHeader" links="{{ navLinks }}" active="Home" phone="(02) 7910 9379" on-nav-click="{{ go }}" hint-size="100%,80px"></x-import>
 
-<div id="hero-section" role="img" aria-label="Green residential building with planted balconies" style="position:relative;height:88vh;min-height:640px;overflow:hidden;background-image:url('assets/imagery/hero-vertical-forest.jpg');background-size:cover;background-position:center;background-attachment:fixed">
+<div id="sticky-nav" style="position:fixed;top:0;left:0;right:0;z-index:50;transform:translateY(-100%);transition:transform .35s var(--ease-standard);box-shadow:0 6px 20px rgba(0,0,0,0.12)">
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.NavHeader" links="{{ navLinks }}" active="Home" phone="(02) 7910 9379" on-nav-click="{{ go }}" hint-size="100%,80px"></x-import>
+</div>
+
+<div id="hero-section" style="position:relative;height:88vh;min-height:640px;overflow:hidden">
+<img id="hero-image" src="assets/imagery/hero-vertical-forest.jpg" alt="Green residential building with planted balconies" style="position:absolute;left:0;top:-30%;width:100%;height:160%;object-fit:cover;will-change:transform">
 <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(22,33,27,0.72) 0%, rgba(22,33,27,0.42) 48%, rgba(22,33,27,0.08) 100%)"></div>
 <div style="position:absolute;inset:0;display:flex;align-items:center">
 <div style="max-width:1440px;margin:0 auto;width:100%;padding:0">
@@ -82,10 +87,12 @@
 <div style="max-width:1440px;margin:0 auto;padding:80px 32px">
 <div class="eyebrow">How our clients feel</div>
 <h2 style="font-size:2.25rem;color:var(--forest-800);margin-bottom:32px">Trusted by the industry</h2>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
-<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="We used the team at Eco Reports for our last assessment and it was done quickly and we had no problems at all. Definitely check these guys out." name="Amy" source="facebook" hint-size="100%,180px"></x-import>
-<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="We use the team at Eco Reports for our company's BASIX and NatHERS certification needs. It's a simple process to submit a new job and they get it completed quickly with no hassles." name="Tom Springsteen" source="google" hint-size="100%,180px"></x-import>
-<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="Professional, prompt and priced fairly. Our BASIX certificate was issued within two days and accepted by council without a single query." name="Josh Carter" source="google" hint-size="100%,180px"></x-import>
+<div id="testimonial-track" class="hide-scrollbar" style="display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory">
+<div style="flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start"><x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="We used the team at Eco Reports for our last assessment and it was done quickly and we had no problems at all. Definitely check these guys out." name="Amy" source="facebook" hint-size="100%,180px"></x-import></div>
+<div style="flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start"><x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="We use the team at Eco Reports for our company's BASIX and NatHERS certification needs. It's a simple process to submit a new job and they get it completed quickly with no hassles." name="Tom Springsteen" source="google" hint-size="100%,180px"></x-import></div>
+<div style="flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start"><x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="Professional, prompt and priced fairly. Our BASIX certificate was issued within two days and accepted by council without a single query." name="Josh Carter" source="google" hint-size="100%,180px"></x-import></div>
+<div style="flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start"><x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="Needed a NatHERS rating fast for a renovation and the team delivered ahead of schedule. Communication was excellent the whole way through." name="Rachel Nguyen" source="facebook" hint-size="100%,180px"></x-import></div>
+<div style="flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start"><x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="Clear explanations, fair pricing and a certificate that sailed through council without any issues. Would use Eco Reports again." name="Michael Chen" source="google" hint-size="100%,180px"></x-import></div>
 </div>
 </div>
 
@@ -117,11 +124,11 @@
 </div>
 </div>
 
-<div style="background:var(--sage-100);padding:72px 32px;text-align:center">
+<div style="background:var(--lime-500);padding:72px 32px;text-align:center">
 <div style="max-width:720px;margin:0 auto">
 <h2 style="color:var(--forest-800);font-size:2.25rem;margin-bottom:16px">Ready to get your certificate underway?</h2>
-<p style="font-family:var(--font-body);color:var(--ink-700);font-size:1.0625rem;margin-bottom:32px;line-height:1.65">Send us your plans today and we'll come back with a fixed-price quote and turnaround estimate — usually within the hour.</p>
-<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Button" variant="primary" size="lg" hint-size="160px,52px">Get a quote</x-import>
+<p style="font-family:var(--font-body);color:var(--forest-700);font-size:1.0625rem;margin-bottom:32px;line-height:1.65">Send us your plans today and we'll come back with a fixed-price quote and turnaround estimate — usually within the hour.</p>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Button" variant="dark" size="lg" hint-size="160px,52px">Get a quote</x-import>
 </div>
 </div>
 
@@ -131,6 +138,61 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
+  componentDidMount() {
+    // The DC runtime can swap this Logic instance once during initial mount
+    // (re-running componentDidMount). Cleanup state is stashed on the DOM
+    // nodes/window themselves rather than `this` so a repeat call tears down
+    // the previous listeners/timers instead of stacking duplicates.
+    if (window.__ecoScrollCleanup) window.__ecoScrollCleanup();
+    const heroImg = document.getElementById('hero-image');
+    const heroSection = document.getElementById('hero-section');
+    const stickyNav = document.getElementById('sticky-nav');
+
+    const onScroll = () => {
+      if (heroImg && heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+          heroImg.style.transform = `translateY(${-rect.top * 0.22}px)`;
+        }
+      }
+      if (stickyNav && heroSection) {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        stickyNav.style.transform = heroBottom <= 0 ? 'translateY(0)' : 'translateY(-100%)';
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    window.__ecoScrollCleanup = () => { window.removeEventListener('scroll', onScroll); window.__ecoScrollCleanup = null; };
+
+    const track = document.getElementById('testimonial-track');
+    if (track) {
+      if (track.__carouselCleanup) track.__carouselCleanup();
+      track.style.scrollBehavior = 'smooth';
+      let idx = 0;
+      const advance = () => {
+        const cards = track.children;
+        if (!cards.length) return;
+        idx = (idx + 1) % cards.length;
+        track.scrollLeft = cards[idx].offsetLeft;
+      };
+      const start = () => { track.__carouselTimer = setInterval(advance, 5000); };
+      const stop = () => { if (track.__carouselTimer) clearInterval(track.__carouselTimer); };
+      start();
+      track.addEventListener('mouseenter', stop);
+      track.addEventListener('mouseleave', start);
+      track.__carouselCleanup = () => {
+        stop();
+        track.removeEventListener('mouseenter', stop);
+        track.removeEventListener('mouseleave', start);
+        track.__carouselCleanup = null;
+      };
+    }
+  }
+  componentWillUnmount() {
+    if (window.__ecoScrollCleanup) window.__ecoScrollCleanup();
+    const track = document.getElementById('testimonial-track');
+    if (track && track.__carouselCleanup) track.__carouselCleanup();
+  }
   renderVals() {
     return {
       go: () => {},
