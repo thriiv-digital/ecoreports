@@ -654,7 +654,7 @@ function Footer({
     src: "assets/logos/logo-black-ecoreports.png",
     alt: "Eco Reports",
     style: {
-      height: 32,
+      height: 52,
       marginBottom: 'var(--space-4)',
       filter: 'brightness(0) invert(1)'
     }
@@ -789,7 +789,8 @@ function NavHeader({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      height: 80,
+      minHeight: 80,
+      padding: '14px 0',
       gap: 'var(--space-6)',
       flexWrap: 'wrap'
     }
@@ -797,7 +798,7 @@ function NavHeader({
     src: "assets/logos/logo-black-ecoreports.png",
     alt: "Eco Reports",
     style: {
-      height: 30,
+      height: 50,
       flexShrink: 0
     }
   }), /*#__PURE__*/React.createElement("nav", {
