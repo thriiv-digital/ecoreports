@@ -10,14 +10,14 @@
 <!-- @template name="Eco Reports Homepage" description="Full-depth BASIX/NatHERS homepage: full-bleed hero with review score, services, why-it's-required explainer, process, credentials, testimonials, audiences, resources" -->
 <helmet><script src="./ds-base.js"></script></helmet>
 <div style="font-family:var(--font-body)">
-<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.NavHeader" links="{{ navLinks }}" active="Home" phone="(02) 7910 9379" on-nav-click="{{ go }}" hint-size="100%,92px"></x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.NavHeader" links="{{ navLinks }}" active="Home" phone="(02) 7910 9379" on-nav-click="{{ go }}" hint-size="100%,80px"></x-import>
 
 <div id="hero-section" style="position:relative;height:88vh;min-height:640px;overflow:hidden">
 <img id="hero-image" src="assets/imagery/hero-vertical-forest.jpg" alt="Green residential building with planted balconies" style="position:absolute;left:0;top:-18%;width:100%;height:136%;object-fit:cover;will-change:transform">
 <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(22,33,27,0.72) 0%, rgba(22,33,27,0.42) 48%, rgba(22,33,27,0.08) 100%)"></div>
 <div style="position:absolute;inset:0;display:flex;align-items:center">
 <div style="max-width:1440px;margin:0 auto;width:100%;padding:0">
-<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Badge" tone="green" hint-size="260px,28px">Required for most NSW development applications</x-import>
+<x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Badge" tone="lime" hint-size="260px,28px">Required for most NSW development applications</x-import>
 <h1 style="color:#fff;font-size:3.5rem;max-width:680px;margin:16px 0;line-height:1.08">BASIX &amp; NatHERS certificates, explained and delivered</h1>
 <p style="font-family:var(--font-body);color:#eaf3ee;font-size:1.125rem;max-width:560px;line-height:1.65">If you're building, renovating or extending a home in NSW, your Development Application likely needs a BASIX Certificate and a NatHERS energy rating. We prepare both — fast, accurate, and accepted by council every time.</p>
 <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;align-items:center">
@@ -30,7 +30,7 @@
 </div>
 
 <div style="max-width:1440px;margin:0 auto;padding:80px 32px">
-<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">How we can assist</div>
+<div class="eyebrow">How we can assist</div>
 <h2 style="font-size:2.25rem;color:var(--ink-900);margin-bottom:16px">Three certifications, one team</h2>
 <p style="font-family:var(--font-body);color:var(--ink-700);font-size:1.0625rem;max-width:640px;margin-bottom:40px;line-height:1.65">Every service below is prepared in-house by our accredited assessors and lodged in the format your certifier or council expects.</p>
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px">
@@ -43,7 +43,7 @@
 <div id="why-section" style="background:var(--sage-50)">
 <div style="max-width:1440px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
 <div>
-<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">Why it's required</div>
+<div class="eyebrow">Why it's required</div>
 <h2 style="font-size:2.25rem;color:var(--ink-900);margin-bottom:20px">Not sure if you need one? Here's the simple version.</h2>
 <p style="font-family:var(--font-body);color:var(--ink-700);font-size:1.0625rem;line-height:1.7;margin-bottom:16px">BASIX and NatHERS aren't optional add-ons — they're checks the NSW Government requires before council or a private certifier will approve most residential building work. Without them, your Development Application can't be lodged.</p>
 <p style="font-family:var(--font-body);color:var(--ink-700);font-size:1.0625rem;line-height:1.7;margin-bottom:24px">You'll generally need a BASIX Certificate and/or NatHERS rating if you're building a new home, adding a second dwelling, doing a major renovation or extension, or converting a building's use. If you're not sure, tell us what you're planning and we'll confirm what applies — free of charge.</p>
@@ -53,13 +53,15 @@
 <div style="display:flex;gap:12px;align-items:flex-start"><span style="font-family:var(--font-display);color:var(--green-600);font-size:1.25rem;line-height:1">✓</span><span style="font-family:var(--font-body);color:var(--ink-900);font-size:1rem"><strong>Granny flats &amp; secondary dwellings</strong> — usually required</span></div>
 </div>
 </div>
-<img src="assets/imagery/sketch-to-render-house.jpg" alt="Architectural plan resolving into a finished home" style="width:100%;height:440px;object-fit:cover;border-radius:var(--radius-md)">
+<div style="height:440px;border-radius:var(--radius-md);overflow:hidden">
+<img class="img-zoom" src="assets/imagery/sketch-to-render-house.jpg" alt="Architectural plan resolving into a finished home" style="width:100%;height:100%;object-fit:cover;display:block">
+</div>
 </div>
 </div>
 
 <div style="background:var(--forest-800)">
 <div style="max-width:1440px;margin:0 auto;padding:80px 32px">
-<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-400);margin-bottom:12px">Process</div>
+<div class="eyebrow on-dark">Process</div>
 <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:24px;flex-wrap:wrap">
 <h2 style="font-size:2.25rem;color:#fff">How it works</h2>
 <div style="font-family:var(--font-mono);font-size:0.875rem;color:#eaf6ef;background:rgba(255,255,255,0.12);padding:10px 16px;border-radius:var(--radius-sm)">Typical turnaround: 2–3 business days</div>
@@ -74,12 +76,12 @@
 </div>
 
 <div style="background:var(--sage-100);text-align:center;padding:56px 32px 0">
-<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600)">We are certified with and for</div>
+<div class="eyebrow" style="justify-content:center;margin-bottom:0">We are certified with and for</div>
 </div>
 <x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.CredentialStrip" logos="{{ credentialLogos }}" hint-size="100%,230px"></x-import>
 
 <div style="max-width:1440px;margin:0 auto;padding:80px 32px">
-<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">How our clients feel</div>
+<div class="eyebrow">How our clients feel</div>
 <h2 style="font-size:2.25rem;color:var(--ink-900);margin-bottom:32px">Trusted by the industry</h2>
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
 <x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.TestimonialCard" quote="We used the team at Eco Reports for our last assessment and it was done quickly and we had no problems at all. Definitely check these guys out." name="Amy" source="facebook" hint-size="100%,180px"></x-import>
@@ -90,7 +92,7 @@
 
 <div style="background:var(--sage-50)">
 <div style="max-width:1440px;margin:0 auto;padding:80px 32px">
-<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">Who we work with</div>
+<div class="eyebrow">Who we work with</div>
 <h2 style="font-size:2.25rem;color:var(--ink-900);margin-bottom:32px">Repeat clients and one-off home owners alike</h2>
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
 <x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.AudienceCard" title="Architects" description="Reliable turnaround across every DA you lodge, with commitments modelled to fit your design intent." hint-size="100%,140px"></x-import>
@@ -104,7 +106,7 @@
 <div style="max-width:1440px;margin:0 auto;padding:80px 32px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;gap:24px;flex-wrap:wrap">
 <div>
-<div style="font-family:var(--font-body);font-weight:700;font-size:0.9375rem;color:var(--green-600);margin-bottom:12px">Resources</div>
+<div class="eyebrow">Resources</div>
 <h2 style="font-size:2.25rem;color:var(--ink-900)">Our latest articles</h2>
 </div>
 <x-import component-from-global-scope="EcoReportsDesignSystem_e3fff4.Button" variant="outline" on-click="{{ goResources }}" hint-size="150px,44px">View all</x-import>

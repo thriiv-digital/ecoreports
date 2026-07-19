@@ -3,3 +3,10 @@ body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var
 h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;letter-spacing:var(--tracking-tight);margin:0}
 a{color:var(--color-primary);text-decoration:none}
 a:hover{color:var(--color-accent)}
+.img-zoom{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.img-zoom:hover{transform:scale(1.06)}
+.eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:700;font-size:0.8125rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--green-600);margin-bottom:12px}
+.eyebrow::before{content:'';width:22px;height:2px;background:var(--lime-500);flex-shrink:0}
+.eyebrow.on-dark{color:var(--green-300)}
+.cta-btn{transition:background var(--duration-base) var(--ease-standard)}
+.cta-btn:hover{background:var(--forest-700)}

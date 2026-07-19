@@ -30,6 +30,7 @@ function ArticleCard({
   }, /*#__PURE__*/React.createElement("img", {
     src: image,
     alt: "",
+    className: "img-zoom",
     style: {
       width: '100%',
       height: '100%',
@@ -80,6 +81,7 @@ function Card({
       border: '1px solid var(--color-border)',
       borderRadius: 'var(--radius-md)',
       boxShadow: 'var(--shadow-sm)',
+      overflow: 'hidden',
       padding: padded ? 'var(--space-6)' : 0
     }
   }, children);
@@ -95,11 +97,12 @@ function ServiceCard({
   }, /*#__PURE__*/React.createElement("img", {
     src: image,
     alt: title,
+    className: "img-zoom",
     style: {
       width: '100%',
       height: 160,
       objectFit: 'cover',
-      borderRadius: 'var(--radius-md) var(--radius-md) 0 0'
+      display: 'block'
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -194,12 +197,16 @@ function TestimonialCard({
       alignItems: 'center',
       justifyContent: 'center',
       background: source === 'google' ? '#fff' : '#1877F2',
-      color: source === 'google' ? '#5c6268' : '#fff',
+      color: '#fff',
       border: source === 'google' ? '1px solid var(--color-border)' : 'none',
       fontSize: 12,
       fontWeight: 700
     }
-  }, sourceMark)));
+  }, source === 'google' ? /*#__PURE__*/React.createElement("img", {
+    src: "assets/logos/icon-google.png",
+    alt: "Google",
+    style: { width: 13, height: 13 }
+  }) : sourceMark)));
 }
 Object.assign(__ds_scope, { TestimonialCard });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/cards/TestimonialCard.jsx", error: String((e && e.message) || e) }); }
@@ -214,6 +221,10 @@ function Badge({
     green: {
       background: 'var(--green-600)',
       color: '#fff'
+    },
+    lime: {
+      background: 'var(--lime-500)',
+      color: 'var(--forest-800)'
     },
     sage: {
       background: 'var(--sage-200)',
@@ -317,6 +328,7 @@ function Button({
     }
   };
   return /*#__PURE__*/React.createElement("button", _extends({
+    className: variant === 'primary' ? 'cta-btn' : undefined,
     style: {
       ...base,
       ...sizes[size],
@@ -500,13 +512,15 @@ function GoogleRatingBadge({
       padding: '10px 16px',
       boxShadow: 'var(--shadow-md)'
     }
-  }, /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "assets/logos/icon-google.png",
+    alt: "Google",
     style: {
-      fontFamily: 'var(--font-display)',
-      fontSize: 'var(--text-lg)',
-      color: 'var(--ink-900)'
+      width: 26,
+      height: 26,
+      flexShrink: 0
     }
-  }, "G"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -549,13 +563,13 @@ function ProcessStep({
       flexDirection: 'column',
       gap: 'var(--space-3)',
       paddingTop: 'var(--space-5)',
-      borderTop: '3px solid var(--green-400)'
+      borderTop: '3px solid var(--lime-500)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--font-display)',
       fontSize: 'var(--text-2xl)',
-      color: 'var(--green-400)'
+      color: 'var(--lime-500)'
     }
   }, number), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -636,18 +650,15 @@ function Footer({
       gridTemplateColumns: '1.1fr 1fr 1fr 1fr 1fr',
       gap: 'var(--space-8)'
     }
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
+    src: "assets/logos/logo-black-ecoreports.png",
+    alt: "Eco Reports",
     style: {
-      fontFamily: 'var(--font-display)',
-      fontSize: 'var(--text-md)',
-      color: '#fff',
-      border: '2px solid var(--green-400)',
-      borderRadius: 'var(--radius-sm)',
-      display: 'inline-block',
-      padding: '5px 12px',
-      marginBottom: 'var(--space-4)'
+      height: 32,
+      marginBottom: 'var(--space-4)',
+      filter: 'brightness(0) invert(1)'
     }
-  }, "Eco Reports"), /*#__PURE__*/React.createElement("p", {
+  }), /*#__PURE__*/React.createElement("p", {
     style: {
       ...link,
       lineHeight: 'var(--leading-relaxed)',
@@ -718,7 +729,11 @@ function Footer({
   }, /*#__PURE__*/React.createElement(SocialDot, {
     label: "f"
   }), /*#__PURE__*/React.createElement(SocialDot, {
-    label: "G"
+    label: /*#__PURE__*/React.createElement("img", {
+      src: "assets/logos/icon-google.png",
+      alt: "Google",
+      style: { width: 14, height: 14 }
+    })
   })))), /*#__PURE__*/React.createElement("div", {
     style: {
       maxWidth: 'var(--container-max)',
@@ -774,24 +789,21 @@ function NavHeader({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      height: 92,
+      height: 80,
       gap: 'var(--space-6)',
       flexWrap: 'wrap'
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "assets/logos/logo-black-ecoreports.png",
+    alt: "Eco Reports",
     style: {
-      fontFamily: 'var(--font-display)',
-      color: 'var(--forest-700)',
-      fontSize: 'var(--text-lg)',
-      border: '2px solid var(--forest-700)',
-      borderRadius: 'var(--radius-sm)',
-      padding: '6px 14px',
+      height: 30,
       flexShrink: 0
     }
-  }, "Eco Reports"), /*#__PURE__*/React.createElement("nav", {
+  }), /*#__PURE__*/React.createElement("nav", {
     style: {
       display: 'flex',
-      gap: 'var(--space-8)',
+      gap: 'var(--space-6)',
       flexWrap: 'wrap'
     }
   }, links.map(l => /*#__PURE__*/React.createElement("a", {
@@ -803,35 +815,36 @@ function NavHeader({
     },
     style: {
       fontFamily: 'var(--font-body)',
-      fontWeight: 700,
-      fontSize: 'var(--text-md)',
-      color: l === active ? 'var(--green-600)' : 'var(--ink-900)'
+      fontWeight: 600,
+      fontSize: 'var(--text-sm)',
+      color: l === active ? 'var(--green-600)' : 'var(--ink-700)'
     }
   }, l))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
-      gap: 'var(--space-6)',
+      gap: 'var(--space-5)',
       flexShrink: 0
     }
   }, phone && /*#__PURE__*/React.createElement("a", {
     href: `tel:${phone.replace(/[^0-9+]/g, '')}`,
     style: {
       fontFamily: 'var(--font-body)',
-      color: 'var(--forest-700)',
-      fontSize: 'var(--text-md)',
-      fontWeight: 700
+      color: 'var(--ink-900)',
+      fontSize: 'var(--text-sm)',
+      fontWeight: 600
     }
   }, phone), /*#__PURE__*/React.createElement("button", {
+    className: "cta-btn",
     style: {
       fontFamily: 'var(--font-body)',
-      fontWeight: 700,
-      fontSize: 'var(--text-base)',
+      fontWeight: 600,
+      fontSize: 'var(--text-sm)',
       background: 'var(--color-accent)',
       color: '#fff',
       border: 'none',
-      borderRadius: 'var(--radius-md)',
-      padding: '14px 26px',
+      borderRadius: 'var(--radius-pill)',
+      padding: '11px 22px',
       cursor: 'pointer'
     }
   }, "Get a Quote"))));
