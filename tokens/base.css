@@ -11,7 +11,7 @@ a:hover{color:var(--color-accent)}
 .cta-btn{transition:background var(--duration-base) var(--ease-standard)}
 .cta-btn:hover{background:var(--forest-700) !important}
 .btn-lift{transition:transform var(--duration-base) var(--ease-standard), box-shadow var(--duration-base) var(--ease-standard)}
-.btn-lift:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
+.btn-lift:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
 .hide-scrollbar{scrollbar-width:none;-ms-overflow-style:none}
 .hide-scrollbar::-webkit-scrollbar{display:none}
 .carousel-arrow{transition:transform var(--duration-base) var(--ease-standard), box-shadow var(--duration-base) var(--ease-standard), background var(--duration-base) var(--ease-standard)}
