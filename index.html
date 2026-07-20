@@ -33,7 +33,7 @@
 </div>
 </div>
 
-<div style="max-width:1440px;margin:0 auto;padding:80px 32px">
+<div id="services-section" style="max-width:1440px;margin:0 auto;padding:80px 32px">
 <div class="eyebrow">How we can assist</div>
 <h2 style="font-size:2.25rem;color:var(--forest-800);margin-bottom:16px">Three certifications, one team</h2>
 <p style="font-family:var(--font-body);color:var(--ink-700);font-size:1.0625rem;max-width:640px;margin-bottom:40px;line-height:1.65">Every service below is prepared in-house by our accredited assessors and lodged in the format your certifier or council expects.</p>
@@ -63,7 +63,7 @@
 </div>
 </div>
 
-<div style="background:var(--forest-800)">
+<div id="process-section" style="background:var(--forest-800)">
 <div style="max-width:1440px;margin:0 auto;padding:80px 32px">
 <div class="eyebrow on-dark">Process</div>
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;gap:24px;flex-wrap:wrap">
@@ -114,7 +114,7 @@
 </div>
 </div>
 
-<div style="background:var(--sage-50)">
+<div id="audience-section" style="background:var(--sage-50)">
 <div style="max-width:1440px;margin:0 auto;padding:80px 32px">
 <div class="eyebrow">Who we work with</div>
 <h2 style="font-size:2.25rem;color:var(--forest-800);margin-bottom:32px">Repeat clients and one-off home owners alike</h2>
@@ -127,7 +127,7 @@
 </div>
 </div>
 
-<div style="max-width:1440px;margin:0 auto;padding:80px 32px">
+<div id="resources-section" style="max-width:1440px;margin:0 auto;padding:80px 32px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;gap:24px;flex-wrap:wrap">
 <div>
 <div class="eyebrow">Resources</div>
@@ -142,7 +142,7 @@
 </div>
 </div>
 
-<div style="background:var(--lime-500);padding:72px 32px;text-align:center">
+<div id="cta-section" style="background:var(--lime-500);padding:72px 32px;text-align:center">
 <div style="max-width:720px;margin:0 auto">
 <h2 style="color:var(--forest-800);font-size:2.25rem;margin-bottom:16px">Ready to get your certificate underway?</h2>
 <p style="font-family:var(--font-body);color:var(--forest-700);font-size:1.0625rem;margin-bottom:32px;line-height:1.65">Send us your plans today and we'll come back with a fixed-price quote and turnaround estimate — usually within the hour.</p>
@@ -233,10 +233,26 @@ class Component extends DCLogic {
     if (track) track.__carouselEpoch = (track.__carouselEpoch || 0) + 1;
   }
   renderVals() {
+    const scrollToId = id => {
+      const el = document.getElementById(id);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
+    };
+    const sectionIds = {
+      services: 'services-section',
+      process: 'process-section',
+      resources: 'resources-section',
+      about: 'why-section',
+      contact: 'cta-section',
+      audience: 'audience-section',
+    };
     return {
-      go: () => {},
-      goWhy: () => { const el = document.getElementById('why-section'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' }); },
-      goResources: () => {},
+      go: key => {
+        if (!key || key === 'home') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+        const id = sectionIds[key];
+        if (id) scrollToId(id);
+      },
+      goWhy: () => scrollToId('why-section'),
+      goResources: () => scrollToId('resources-section'),
       navLinks: ['Home', 'Services', 'Process', 'Resources', 'About', 'Contact'],
       googleRating: 4.9,
       googleCount: 128,

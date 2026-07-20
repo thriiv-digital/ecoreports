@@ -599,25 +599,6 @@ Object.assign(__ds_scope, { ProcessStep });
 
 // components/navigation/Footer.jsx
 try { (() => {
-function SocialDot({
-  label
-}) {
-  return /*#__PURE__*/React.createElement("span", {
-    style: {
-      width: 30,
-      height: 30,
-      borderRadius: '50%',
-      background: 'rgba(255,255,255,0.12)',
-      color: '#fff',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontFamily: 'var(--font-body)',
-      fontWeight: 700,
-      fontSize: 12
-    }
-  }, label);
-}
 function Footer({
   onNavClick
 } = {}) {
@@ -677,47 +658,51 @@ function Footer({
     style: heading
   }, "Our Services"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#",
-    onClick: go('service')
+    href: "#services-section",
+    onClick: go('services')
   }, "BASIX Certificates"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#",
-    onClick: go('service')
+    href: "#services-section",
+    onClick: go('services')
   }, "NatHERS Assessments"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#",
-    onClick: go('service')
+    href: "#services-section",
+    onClick: go('services')
   }, "Section J Reports")), /*#__PURE__*/React.createElement("div", {
     style: col
   }, /*#__PURE__*/React.createElement("div", {
     style: heading
   }, "We Work With"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#"
+    href: "#audience-section",
+    onClick: go('audience')
   }, "Architects"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#"
+    href: "#audience-section",
+    onClick: go('audience')
   }, "Draftsmen & Designers"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#"
+    href: "#audience-section",
+    onClick: go('audience')
   }, "Developers"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#"
+    href: "#audience-section",
+    onClick: go('audience')
   }, "Home Owners")), /*#__PURE__*/React.createElement("div", {
     style: col
   }, /*#__PURE__*/React.createElement("div", {
     style: heading
   }, "Resources"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#",
-    onClick: go('blog')
+    href: "#resources-section",
+    onClick: go('resources')
   }, "Blog & Articles"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#",
+    href: "#process-section",
     onClick: go('process')
   }, "How It Works"), /*#__PURE__*/React.createElement("a", {
     style: link,
-    href: "#",
+    href: "#cta-section",
     onClick: go('contact')
   }, "Contact Us")), /*#__PURE__*/React.createElement("div", {
     style: col
@@ -727,21 +712,7 @@ function Footer({
     style: link
   }, "Level 26, 44 Market Street", /*#__PURE__*/React.createElement("br", null), "Sydney NSW 2000"), /*#__PURE__*/React.createElement("span", {
     style: link
-  }, "(02) 7910 9379"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      gap: 'var(--space-2)',
-      marginTop: 'var(--space-2)'
-    }
-  }, /*#__PURE__*/React.createElement(SocialDot, {
-    label: "f"
-  }), /*#__PURE__*/React.createElement(SocialDot, {
-    label: /*#__PURE__*/React.createElement("img", {
-      src: "assets/logos/icon-google.png",
-      alt: "Google",
-      style: { width: 14, height: 14 }
-    })
-  })))), /*#__PURE__*/React.createElement("div", {
+  }, "(02) 7910 9379"))), /*#__PURE__*/React.createElement("div", {
     style: {
       maxWidth: 'var(--container-max)',
       margin: 'var(--space-12) auto 0',
@@ -780,9 +751,15 @@ function NavHeader({
   phone,
   onNavClick
 }) {
-  const keyOf = l => ({
-    services: 'service'
-  })[l.toLowerCase()] || l.toLowerCase();
+  const keyOf = l => l.toLowerCase();
+  const hrefOf = l => ({
+    home: '#',
+    services: '#services-section',
+    process: '#process-section',
+    resources: '#resources-section',
+    about: '#why-section',
+    contact: '#cta-section'
+  })[keyOf(l)] || '#';
   return /*#__PURE__*/React.createElement("header", {
     style: {
       background: '#fff',
@@ -816,7 +793,7 @@ function NavHeader({
     }
   }, links.map(l => /*#__PURE__*/React.createElement("a", {
     key: l,
-    href: "#",
+    href: hrefOf(l),
     onClick: e => {
       e.preventDefault();
       onNavClick && onNavClick(keyOf(l));
