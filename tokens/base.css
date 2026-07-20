@@ -9,6 +9,11 @@ a:hover{color:var(--color-accent)}
 .eyebrow::before{content:'';width:22px;height:2px;background:currentColor;flex-shrink:0}
 .eyebrow.on-dark{color:var(--lime-500)}
 .cta-btn{transition:background var(--duration-base) var(--ease-standard)}
-.cta-btn:hover{background:var(--forest-700)}
+.cta-btn:hover{background:var(--forest-700) !important}
+.btn-lift{transition:transform var(--duration-base) var(--ease-standard), box-shadow var(--duration-base) var(--ease-standard)}
+.btn-lift:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
 .hide-scrollbar{scrollbar-width:none;-ms-overflow-style:none}
 .hide-scrollbar::-webkit-scrollbar{display:none}
+.carousel-arrow{transition:transform var(--duration-base) var(--ease-standard), box-shadow var(--duration-base) var(--ease-standard), background var(--duration-base) var(--ease-standard)}
+.carousel-arrow:hover{background:var(--sage-100) !important;transform:translateY(-50%) scale(1.08)}
+.carousel-dot{transition:background var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard)}

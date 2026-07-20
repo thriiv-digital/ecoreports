@@ -100,7 +100,7 @@ function ServiceCard({
     className: "img-zoom",
     style: {
       width: '100%',
-      height: 160,
+      height: 190,
       objectFit: 'cover',
       display: 'block'
     }
@@ -123,13 +123,14 @@ function ServiceCard({
       margin: '0 0 var(--space-4)'
     }
   }, description), /*#__PURE__*/React.createElement("button", {
+    className: "btn-lift",
     style: {
       fontFamily: 'var(--font-body)',
       fontWeight: 700,
       fontSize: 'var(--text-sm)',
       background: 'var(--sage-100)',
       border: 'none',
-      borderRadius: 'var(--radius-sm)',
+      borderRadius: 'var(--radius-btn)',
       padding: '10px 16px',
       cursor: 'pointer',
       color: 'var(--forest-700)'
@@ -282,12 +283,12 @@ function Button({
     fontFamily: 'var(--font-body)',
     fontWeight: 700,
     border: '2px solid transparent',
-    borderRadius: 'var(--radius-sm)',
+    borderRadius: 'var(--radius-btn)',
     cursor: 'pointer',
     display: 'inline-flex',
     alignItems: 'center',
     gap: '8px',
-    transition: 'background var(--duration-base) var(--ease-standard), color var(--duration-base) var(--ease-standard), border-color var(--duration-base) var(--ease-standard)'
+    transition: 'background var(--duration-base) var(--ease-standard), color var(--duration-base) var(--ease-standard), border-color var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard), box-shadow var(--duration-base) var(--ease-standard)'
   };
   const sizes = {
     sm: {
@@ -332,7 +333,7 @@ function Button({
     }
   };
   return /*#__PURE__*/React.createElement("button", _extends({
-    className: (variant === 'primary' || variant === 'dark') ? 'cta-btn' : undefined,
+    className: 'btn-lift' + ((variant === 'primary' || variant === 'dark') ? ' cta-btn' : ''),
     style: {
       ...base,
       ...sizes[size],
@@ -835,14 +836,32 @@ function NavHeader({
     }
   }, phone && /*#__PURE__*/React.createElement("a", {
     href: `tel:${phone.replace(/[^0-9+]/g, '')}`,
+    className: "btn-lift",
     style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '8px',
       fontFamily: 'var(--font-body)',
-      color: 'var(--ink-900)',
+      color: 'var(--forest-700)',
       fontSize: 'var(--text-sm)',
-      fontWeight: 600
+      fontWeight: 600,
+      background: 'var(--sage-100)',
+      borderRadius: 'var(--radius-pill)',
+      padding: '10px 18px'
     }
-  }, phone), /*#__PURE__*/React.createElement("button", {
-    className: "cta-btn",
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: 16,
+    height: 16,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 2,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round'
+  }, /*#__PURE__*/React.createElement("path", {
+    d: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z'
+  })), phone), /*#__PURE__*/React.createElement("button", {
+    className: "btn-lift cta-btn",
     style: {
       fontFamily: 'var(--font-body)',
       fontWeight: 600,
@@ -850,7 +869,7 @@ function NavHeader({
       background: 'var(--color-accent)',
       color: '#fff',
       border: 'none',
-      borderRadius: 'var(--radius-pill)',
+      borderRadius: 'var(--radius-btn)',
       padding: '11px 22px',
       cursor: 'pointer'
     }
