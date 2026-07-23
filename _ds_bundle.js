@@ -638,15 +638,22 @@ function Footer({
       gridTemplateColumns: '1.1fr 1fr 1fr 1fr 1fr',
       gap: 'var(--space-8)'
     }
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
-    src: "assets/logos/logo-black-ecoreports.png",
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#fff',
+      display: 'inline-block',
+      padding: '10px 14px',
+      borderRadius: 'var(--radius-md)',
+      marginBottom: 'var(--space-4)'
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "assets/logos/logo-eco-reports.png",
     alt: "Eco Reports",
     style: {
-      height: 52,
-      marginBottom: 'var(--space-4)',
-      filter: 'brightness(0) invert(1)'
+      height: 40,
+      display: 'block'
     }
-  }), /*#__PURE__*/React.createElement("p", {
+  })), /*#__PURE__*/React.createElement("p", {
     style: {
       ...link,
       lineHeight: 'var(--leading-relaxed)',
@@ -779,7 +786,7 @@ function NavHeader({
       flexWrap: 'wrap'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "assets/logos/logo-black-ecoreports.png",
+    src: "assets/logos/logo-eco-reports.png",
     alt: "Eco Reports",
     style: {
       height: 50,
